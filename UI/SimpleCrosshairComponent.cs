@@ -36,7 +36,7 @@ namespace SimpleCrosshair
         {
             typeof(Player.FirearmController),
             typeof(Player.BaseKnifeController),
-            typeof(Player.BaseGrenadeController),
+            typeof(Player.BaseGrenadeHandsController),
         };
 
         private Image _crosshairImage;

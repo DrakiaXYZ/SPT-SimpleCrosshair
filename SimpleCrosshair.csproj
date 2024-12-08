@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TarkovDir Condition=" '$(TarkovDir)' == '' ">D:\Games\SPTarkov-3.9.0\</TarkovDir>
-    <TarkovDebugDir Condition=" '$(TarkovDebugDir)' == '' ">D:\Games\SPTarkov-3.9.0-Debug\</TarkovDebugDir>
+    <TarkovDir Condition=" '$(TarkovDir)' == '' ">..\..\</TarkovDir>
     <TarkovManagedDir>$(TarkovDir)EscapeFromTarkov_Data\Managed\</TarkovManagedDir>
     <TarkovBepInExCoreDir>$(TarkovDir)BepInEx\core\</TarkovBepInExCoreDir>
     <TarkovBepInExSptDir>$(TarkovDir)BepInEx\plugins\spt\</TarkovBepInExSptDir>
@@ -118,10 +117,6 @@
     <Copy
       SourceFiles="@(OutputDLL);@(Resources);@(License)"
       DestinationFolder="$(TarkovDir)BepInEx\plugins\SimpleCrosshair"
-    />
-    <Copy
-      SourceFiles="@(OutputDLL);@(Resources);@(License)"
-      DestinationFolder="$(TarkovDebugDir)BepInEx\plugins\SimpleCrosshair"
     />
 
     <!-- Creates a release zip file -->
