@@ -95,7 +95,7 @@ namespace SimpleCrosshair
 
             // we may have missed register player, so if a player exists, go ahead and call it
             // TODO: investigate if this is needed or if the patch should be used instead
-            if (GameUtils.Player != null)
+            if (GameUtils.IsGameActive && GameUtils.Player != null)
             {
                 OnRegisterMainPlayer();
             }
@@ -311,6 +311,7 @@ namespace SimpleCrosshair
 
         internal void OnRegisterMainPlayer()
         {
+            if (!GameUtils.IsGameActive) return;
             var player = GameUtils.Player;
 
             _cachedPlayer = player;
@@ -333,6 +334,7 @@ namespace SimpleCrosshair
 
         internal void OnUnregisterMainPlayer()
         {
+            if (!GameUtils.IsGameActive) return;
             var player = GameUtils.Player;
 
             // unregister events on player
