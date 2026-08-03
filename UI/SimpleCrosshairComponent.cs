@@ -252,7 +252,7 @@ namespace SimpleCrosshair
             var ray = new Ray(rayBegin, rayDirection);
             var rayEnd = rayBegin + rayDirection.normalized * _dynamicPositionAimDistance;
 			var didRayHit = Physics.Raycast(
-                ray, out RaycastHit rayHit, _dynamicPositionAimDistance, LayerMaskClass.HighPolyWithTerrainMask);
+                ray, out RaycastHit rayHit, _dynamicPositionAimDistance, LayersMaskController.HighPolyWithTerrainMask);
 
             var worldAimPoint = didRayHit ? rayHit.point : rayEnd;
             var screenAimPoint = GetCanvasScreenPosition(worldAimPoint);
